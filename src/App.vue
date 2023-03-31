@@ -1,12 +1,15 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <NavBar/>
   </nav>
   <router-view/>
 </template>
 
 <style lang="scss">
+body {
+  background-color: aliceblue;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,7 +19,7 @@
 }
 
 nav {
-  padding: 30px;
+  background-color: snow;
 
   a {
     font-weight: bold;
@@ -28,3 +31,7 @@ nav {
   }
 }
 </style>
+
+<script setup>
+import NavBar from "@/components/NavBar.vue";
+</script>
