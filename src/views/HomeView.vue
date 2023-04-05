@@ -1,33 +1,35 @@
 <template>
   <section class="todo-section">
-    <section class="todo-list">
+    <div class="todo-list">
       <h2>ToDo List</h2>
       <h2 v-show="todos.length === 0">No Todos Here!</h2>
       <ul class="task-list">
-        <li class="task-list-item" v-for="todo in todos">
-          <label class="task-list-item-label" v-if="!todo.isEditing">
-            <vs-checkbox
-                class="checkbox"
-                icon="close"
-                color="danger"
-                v-model="todo.done">
-            </vs-checkbox>
-            <vs-list>
-              <vs-list-item
-                  :class="{ done: todo.done }"
-                  :title="todo.title"
-                  :subtitle="todo.description">
-              </vs-list-item>
-            </vs-list>
-          </label>
-        </li>
+        <div v-for="todo in todos">
+          <li class="task-list-item" v-if="!todo.isEditing">
+            <label class="task-list-item-label" v-if="!todo.isEditing">
+              <vs-checkbox
+                  class="checkbox"
+                  icon="close"
+                  color="danger"
+                  v-model="todo.done">
+              </vs-checkbox>
+              <vs-list>
+                <vs-list-item
+                    :class="{ done: todo.done }"
+                    :title="todo.title"
+                    :subtitle="todo.description">
+                </vs-list-item>
+              </vs-list>
+            </label>
+          </li>
+        </div>
       </ul>
-    </section>
+    </div>
   </section>
 </template>
 
 <script>
-import { todos } from "@/store/todos"
+import { todos } from "@/components/Todo/todos"
 import { onMounted, watch } from "vue";
 
 export default {

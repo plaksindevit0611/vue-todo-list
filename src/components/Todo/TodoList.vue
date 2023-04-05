@@ -1,7 +1,7 @@
 <template>
   <section class="todo-section">
-    <section class="todo-list">
-      <h2>ToDo List</h2>
+    <div class="todo-list">
+      <h2>ToDo List Editor</h2>
       <h2 v-show="todos.length === 0">No Todos Here!</h2>
       <ul class="task-list">
         <li class="task-list-item" v-for="todo in todos">
@@ -37,7 +37,7 @@
             </vs-icon>
           </span>
 
-          <span class="custom-btn edit-btn" v-if="!todo.isEditing">
+          <span class="custom-btn edit-btn" v-if="!todo.isEditing && !todo.done">
             <vs-icon
                 size="small"
                 color="orange"
@@ -56,12 +56,12 @@
           </span>
         </li>
       </ul>
-    </section>
+    </div>
   </section>
 </template>
 
 <script>
-import { todos } from "@/store/todos"
+import { todos } from "@/components/Todo/todos"
 import { inject } from "vue";
 
 export default {

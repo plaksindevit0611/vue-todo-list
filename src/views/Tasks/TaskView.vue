@@ -1,15 +1,15 @@
 <template>
-  <todo-form/>
+  <input-form/>
   <todo-list/>
 </template>
 
 <script>
-import TodoForm from "@/components/TodoForm.vue"
-import TodoList from "@/components/TodoList.vue"
+import InputForm from "@/components/Todo/InputForm.vue"
+import TodoList from "@/components/Todo/TodoList.vue"
 
 export default {
   components: {
-    TodoForm,
+    InputForm,
     TodoList
   }
 }

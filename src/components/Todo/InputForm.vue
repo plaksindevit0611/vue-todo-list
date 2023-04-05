@@ -1,7 +1,7 @@
 <template>
-  <div class="form-section">
+  <section class="form-section">
     <h2>ToDo List Application</h2>
-    <section class="form-section-inputs">
+    <div class="form-section-inputs">
       <div class="create-todo-form">
         <div class="centerx default-input wrapper-input">
           <vs-input
@@ -24,17 +24,17 @@
           Add ToDo
         </vs-button>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
 import { onMounted, ref, watch } from "vue"
-import { todos } from "@/store/todos"
+import { todos } from "@/components/Todo/todos"
 import { inject } from 'vue'
 
 export default {
-  name: 'TodoForm',
+  name: 'InputForm',
   setup() {
     const title = ref('')
     const description = ref('')
